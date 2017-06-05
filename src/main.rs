@@ -13,6 +13,9 @@ fn main() {
     for character in input.chars() {
         let val: u8 = character as u8;
         let binary = format!("{:b}", val);
+
+        /* TODO: I didn't find any simpler way to prepend characters;
+           a solution with format!() should exist... */
         let fill = "0".repeat(8 - binary.len());
 
         message = format!("{}{}{}", message, fill, binary);
